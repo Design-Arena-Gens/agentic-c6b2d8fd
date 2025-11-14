@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0b0d10;
+  --bg-soft: #0f1216;
+  --fg: #e6edf3;
+  --muted: #9aa7b2;
+  --accent: #7bdff2;
+  --accent-soft: #a1e8f7;
+}
+
+* { box-sizing: border-box; }
+html, body, #__next { height: 100%; }
+html { color-scheme: dark; }
+body {
+  background: radial-gradient(1200px 800px at 70% -10%, rgba(123,223,242,0.06), transparent 60%),
+              radial-gradient(900px 600px at -10% 20%, rgba(161,232,247,0.04), transparent 60%),
+              linear-gradient(180deg, var(--bg), var(--bg-soft) 40%, var(--bg));
+  color: var(--fg);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: rgba(123,223,242,0.25); color: white; }
+
+/***** Subtle glass panel *****/
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+}
+
+/***** Magnetic hover helpers *****/
+.magnetic {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/***** Soft focus outline *****/
+.focus-ring:focus-visible {
+  outline: 2px solid rgba(123,223,242,0.55);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
